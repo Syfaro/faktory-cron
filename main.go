@@ -33,6 +33,9 @@ func main() {
 	logger := log.Default()
 
 	configPath := flag.String("config", "config.yaml", "Path to configuration file")
+
+	flag.Parse()
+
 	file, err := os.Open(*configPath)
 	if err != nil {
 		logger.Fatalf("could not open configuration: %v", err)
